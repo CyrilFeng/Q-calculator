@@ -31,12 +31,14 @@ public class Flowable extends Permutation<GoodsItem> {
     }
 
     @Override
-    protected void makeSnapshot(CalcState<GoodsItem> state) {
+    protected void makeSnapshot(CalcState<GoodsItem> state, DiscountContext<GoodsItem> context) {
 
     }
 
     @Override
-    protected void backToSnapshot(CalcState<GoodsItem> state) {
+    protected void backToSnapshot(CalcState<GoodsItem> state, DiscountContext<GoodsItem> context) {
 
     }
+
+
 }

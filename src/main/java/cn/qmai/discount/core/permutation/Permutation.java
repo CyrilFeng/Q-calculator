@@ -293,7 +293,7 @@ public abstract class Permutation<T extends GoodsItem> {
         state.setCurPrice(context.getCalcResult().getCurPrice());
         state.setCurStages(copyStage(context.getCalcResult().getCurStages()));
         state.setRecords(copyRecord(context.getRecords()));
-        makeSnapshot(state);
+        makeSnapshot(state,context);
         return state;
     }
 
@@ -307,7 +307,7 @@ public abstract class Permutation<T extends GoodsItem> {
         context.getCalcResult().setCurPrice(state.getCurPrice());
         context.getCalcResult().setCurStages(copyStage(state.getCurStages()));
         context.setRecords(copyRecord(state.getRecords()));
-        backToSnapshot(state);
+        backToSnapshot(state,context);
     }
 
 
@@ -375,11 +375,11 @@ public abstract class Permutation<T extends GoodsItem> {
      * 业务将状态记录到保存点
      * @param state 保存点对象
      */
-    protected abstract void makeSnapshot(CalcState<T> state);
+    protected abstract void makeSnapshot(CalcState<T> state,DiscountContext<T> context);
 
     /**
      * 业务返回保存点状态
      * @param state 保存点对象
      */
-    protected abstract void backToSnapshot(CalcState<T> state);
+    protected abstract void backToSnapshot(CalcState<T> state,DiscountContext<T> context);
 }
