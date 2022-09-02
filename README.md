@@ -302,7 +302,7 @@ public class TestController {
         for(Pair<Set<DiscountWrapper>,Set<DiscountWrapper>> set:pairs) {
             //统计算力
             count += LimitingUtil.count(set.getLeft().size());
-            if(count>100000){
+            if(count>N){
                 break;
             }
             List<DiscountWrapper> wrappers = Lists.newArrayList(set.getLeft());
