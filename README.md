@@ -259,16 +259,16 @@ public class ManjianCalc extends AbstractCalculator<GoodsItem> {
 activity0-card3-card1
 activity0-card3-coupon1
 
-工具类 `DiscountGroupUtil` 提供了协议转共享组的方法，由于共享组可能很长，所以先和用户当前订单拥有的优惠进行一个交叉过滤，为了提升过滤的性能，要将当前可用优惠转成二级`Map`，这个`Map`的外层键是协议中的`type`，第二层键是协议中的`id`。
+工具类 `DiscountGroupUtil` 提供了协议转共享组的方法，由于共享组可能很长，所以先和用户当前订单可享的优惠进行一个交叉过滤，为了提升过滤的性能，要将当前可用优惠转成二级`Map`，这个`Map`的外层键是协议中的`type`，第二层键是协议中的`id`。
 
 ```Java
 public static List<Pair<Set<DiscountWrapper>,Set<DiscountWrapper>>> transform(List<List<DiscountGroup>> groups, Map<String, Map<String,DiscountWrapper>> inMap);
 ```
-为了保证算力，我们将用户本单拥有的优惠分别装在2个集合中，左侧集合的大小为`SUPPORTEDSIZE`，也就是算力之内的、重点保障的优惠，而右侧的集合则尽力而为去叠加即可。
+为了保证算力，我们将用户本单可享的优惠分别装在2个集合中，左侧集合的大小为`SUPPORTEDSIZE`，也就是算力之内的、重点保障的优惠，而右侧的集合则尽力而为去叠加即可。
 
 #### CASE
 
-看了这么多概念，咱们可以在`cn.qmai.discount.demo`找到调用的具体case
+看了这么多概念，我们可以在`cn.qmai.discount.demo`找到调用的具体case
 
 ```Java
 @Controller
