@@ -268,7 +268,8 @@ activity0-card3-coupon1
 ```Java
 public static List<Pair<Set<DiscountWrapper>,Set<DiscountWrapper>>> transform(List<List<DiscountGroup>> groups, Map<String, Map<String,DiscountWrapper>> inMap);
 ```
-为了保证算力，我们将用户本单可享的优惠分别装在2个集合中，左侧集合的大小为`SUPPORTEDSIZE`，也就是算力之内的、重点保障的优惠，而右侧的集合则尽力而为去叠加即可。
+为了保证算力，我们将用户本单可享的优惠分别装在2个集合中，左侧集合的大小为`SUPPORTEDSIZE`，也就是算力之内的、重点保障的优惠，而右侧的集合则尽力而为去叠加即可。  
+从稳定性角度来讲，我们需要给计算次数做一个统计，并在压测中摸清楚阈值，我们提供了`LimitingUtil.count`统计进入`calc`方法的次数，显然在没有开启缓存的情况下，计算次数为 $A_n^n$ x n，在开启缓存的情况下，计算次数为 $A_n^n$ x (n-3) + $A_n^3$
 
 #### CASE
 
