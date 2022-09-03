@@ -22,6 +22,7 @@ public class LimitingUtil {
             case 4:return 48;
             case 5:return 300;
             case 6:return 2280;
+            case 7:return 20370;
             default:return 0;
         }
     }
