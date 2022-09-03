@@ -1,4 +1,4 @@
-## Q-calculator 高性能优惠计算框架
+## Q-calculator 高性能优惠叠加计算框架
 
 #### Maintainer: 
 
@@ -57,7 +57,7 @@ private static Integer calcKey(List<Byte> a){
 }
 ```
 
-`Permutation`提供了保存点来实现 $A_n^3$ 级别缓存，CalcState&lt;T&gt; 记录了计算到第3步的状态，包括当前订单优惠金额和计算过程、已享用优惠的商品等，这些属性的保存和回放`Permutation`已经帮你做好了，`Permutation`额外提供了抽象的保存和回放方法来满足你的个性化诉求。
+`Permutation`提供了保存点来实现 $A_n^3$ 级别缓存，`CalcState` 记录了计算到第3步的状态，包括当前订单优惠金额和计算过程、已享用优惠的商品等，这些属性的保存和回放`Permutation`已经帮你做好了，`Permutation`额外提供了抽象的保存和回放方法来满足你的个性化诉求。
 
 ```Java
    /**
