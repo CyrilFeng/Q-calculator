@@ -224,7 +224,7 @@ public class ManjianCalc extends AbstractCalculator<GoodsItem> {
         ]
     }]
 ```
-相应地，数组中包含2个对象，则第1个对象的relation可以为share或者exclude，第二个对象的relation必须为exclude
+相应地，数组中包含2个对象，则第1个对象的`relation`可以为`share`或者`exclude`，第二个对象的`relation`必须为`exclude`
 
 ```JavaScript
 [
@@ -260,8 +260,8 @@ public class ManjianCalc extends AbstractCalculator<GoodsItem> {
 ```
 最终将转化为共享组，比如上面的协议将转化为下面2个共享组
 
-activity0-card3-card1  
-activity0-card3-coupon1
+`activity0-card3-card1`   
+`activity0-card3-coupon1`
 
 工具类 `DiscountGroupUtil` 提供了协议转共享组的方法，由于共享组可能很长，所以先和用户当前订单可享的优惠进行一个交叉过滤，为了提升过滤的性能，要将当前可用优惠转成二级`Map`，这个`Map`的外层键是协议中的`type`，第二层键是协议中的`id`。
 
