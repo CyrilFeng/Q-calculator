@@ -58,7 +58,7 @@ public class DiscountGroupUtil {
             }
         }
         //优先计算短的共享组
-        return resultList.stream().sorted(Comparator.comparing(x->x.getLeft().size())).collect(Collectors.toList());
+        return resultList.stream().sorted(Comparator.comparing(x->x.getLeft().size(),Collections.reverseOrder())).collect(Collectors.toList());
     }
 
     /**
