@@ -1,5 +1,8 @@
 package cn.qmai.discount.core.utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 统计计算次数的工具，在机器负载较大时，作为放弃后面计算的条件
  * @author: shiyafeng
@@ -26,5 +29,4 @@ public class LimitingUtil {
             default:return 0;
         }
     }
-
 }
