@@ -2,7 +2,9 @@
 
 #### Maintainer: 
 
-史亚风  龙链
+[史亚风](https://github.com/CyrilFeng)
+
+[龙链](https://github.com/longlian87)
 
 #### 背景：
 
@@ -224,7 +226,7 @@ public class ManjianCalc extends AbstractCalculator<GoodsItem> {
         ]
     }]
 ```
-相应地，数组中包含2个对象，则第1个对象的relation可以为share或者exclude，第二个对象的relation必须为exclude
+相应地，数组中包含2个对象，则第1个对象的`relation`可以为`share`或者`exclude`，第二个对象的`relation`必须为`exclude`
 
 ```JavaScript
 [
@@ -260,15 +262,16 @@ public class ManjianCalc extends AbstractCalculator<GoodsItem> {
 ```
 最终将转化为共享组，比如上面的协议将转化为下面2个共享组
 
-activity0-card3-card1  
-activity0-card3-coupon1
+`activity0-card3-card1`   
+`activity0-card3-coupon1`
 
 工具类 `DiscountGroupUtil` 提供了协议转共享组的方法，由于共享组可能很长，所以先和用户当前订单可享的优惠进行一个交叉过滤，为了提升过滤的性能，要将当前可用优惠转成二级`Map`，这个`Map`的外层键是协议中的`type`，第二层键是协议中的`id`。
 
 ```Java
 public static List<Pair<Set<DiscountWrapper>,Set<DiscountWrapper>>> transform(List<List<DiscountGroup>> groups, Map<String, Map<String,DiscountWrapper>> inMap);
 ```
-为了保证算力，我们将用户本单可享的优惠分别装在2个集合中，左侧集合的大小为`SUPPORTEDSIZE`，也就是算力之内的、重点保障的优惠，而右侧的集合则尽力而为去叠加即可。
+为了保证算力，我们将用户本单可享的优惠分别装在2个集合中，左侧集合的大小为`SUPPORTEDSIZE`，也就是算力之内的、重点保障的优惠，而右侧的集合则尽力而为去叠加即可。  
+从稳定性角度来讲，我们需要给计算次数做一个统计，并在压测中摸清楚阈值，我们提供了`LimitingUtil.count`统计进入`calc`方法的次数，显然在没有开启缓存的情况下，计算次数为 $A_n^n$ x n，在开启缓存的情况下，计算次数为 $A_n^n$ x (n-3) + $A_n^3$
 
 #### CASE
 
