@@ -40,7 +40,7 @@ public class GoodsInfo implements Serializable,Cloneable {
     private long salePrice;
 
     /**
-     * 商品名次
+     * 商品名
      */
     private String name;
 
