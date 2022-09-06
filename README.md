@@ -1,5 +1,5 @@
 <div align=center>
-  <img width="30%" src="./READMEIMG/qiweilogo.png" />
+  <img width="38%" src="./READMEIMG/qiweilogo.png" />
 </div>
 
 <div align="center">
