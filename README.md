@@ -2,8 +2,8 @@
 
 #### Maintainer: 
 
-
-<img src="./READMEIMG/maintainers.png" width="40%">
+[CyrilFeng](https://github.com/CyrilFeng)    
+[longlian87](https://github.com/longlian87)
  
 #### 背景：
 
