@@ -13,10 +13,13 @@
 
 ## Q-calculator 高性能优惠叠加计算框架
 
-#### Maintainer: 
+#### Maintainers: 
 
-[CyrilFeng](https://github.com/CyrilFeng)    
 [longlian87](https://github.com/longlian87)
+
+#### contributors: 
+
+ 
  
 #### 背景：
 
