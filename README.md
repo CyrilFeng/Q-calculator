@@ -17,12 +17,13 @@
 
 [longlian87](https://github.com/longlian87)
 
-#### contributors: 
+#### contributors: （排名不分先后）
 
  | 姓名 | 单位 | email |
 | :-----| :----- | :----- |
 | 张贵璋 | 拼多多 | 19121238146@126.com |
 | 杨晓明 | 碧桂园 | yangxiaoming0229@qq.com |
+| 冯冠森 | 埃森哲 | treecheese@163.com |  
 | 林森 | 北京易点淘网络 | 1125056798@qq.com |
 | 金顺 | 中国电建集团江西公司 | 1483661718@qq.com |  
 | 徐博 | 中国建筑第八工程局一公司 | 923836273@qq.com |  
@@ -36,7 +37,6 @@
 | 庞雷 | 成都维塔士软件 | speedcrusade0983@163.com |   
 | 邓景恒 | 深圳明源云科技 | 1609523342@qq.com |   
 | 邓宗旭 | 上海泰琰信息 | dengzongxu@vip.qq.com |  
-| 冯冠森 | Accenture信息 | treecheese@163.com |  
 | 胡嘉乐 | 独立开发者 | hujiale-mail@qq.com |  
 | 霍昱林 | 独立开发者 | 345479435@qq.com |  
 | 何璇 | 独立开发者 | 1018826963@qq.com |  
