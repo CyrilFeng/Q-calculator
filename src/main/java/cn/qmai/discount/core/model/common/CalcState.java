@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Shiyafeng
+ * Copyright 2022 CyrilFeng
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import java.util.Map;
 
 /**
  * 保存点，用于缓存，入计算到第3个节点时可以将所有状态写入CalcState
- * @author: shiyafeng
+ * @author: CyrilFeng
  * @date: 2022/8
  */
 @Data
