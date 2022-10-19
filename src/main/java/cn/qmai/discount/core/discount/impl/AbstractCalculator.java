@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Shiyafeng
+ * Copyright 2022 CyrilFeng
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import java.util.Map;
 
 /**
  * 抽象计算器类，每种类型优惠做一个实现类，负责创建 stage，维护CalcStage[]数组等内部工作，这对使用者是透明的
- * @author: shiyafeng
+ * @author: CyrilFeng
  * @date: 2022/8
  */
 public abstract class AbstractCalculator<T extends GoodsItem> implements Calculator<T> {
