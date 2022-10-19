@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Shiyafeng
+ * Copyright 2022 CyrilFeng
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * 统计计算次数的工具，在机器负载较大时，作为放弃后面计算的条件
- * @author: shiyafeng
+ * @author: CyrilFeng
  * @date: 2022/8
  */
 public class LimitingUtil {
