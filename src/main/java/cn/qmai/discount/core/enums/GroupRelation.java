@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Shiyafeng
+ * Copyright 2022 CyrilFeng
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package cn.qmai.discount.core.enums;
 
 /**
  * 组内关系枚举
- * @author: shiyafeng
+ * @author: CyrilFeng
  * @date: 2022/8
  */
 public enum GroupRelation {
