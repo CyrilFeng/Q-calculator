@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Shiyafeng
+ * Copyright 2022 CyrilFeng
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import java.util.Map;
 
 /**
  * 共享互斥组
- * @author: shiyafeng
+ * @author: CyrilFeng
  * @date: 2022/8
  */
 @Data
