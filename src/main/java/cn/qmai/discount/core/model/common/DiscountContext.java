@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Shiyafeng
+ * Copyright 2022 CyrilFeng
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 
 /**
  * 优惠上下文，包含一些初始化工作、预计算等等
- * @author: shiyafeng
+ * @author: CyrilFeng
  * @date: 2022/8
  */
 @Data
