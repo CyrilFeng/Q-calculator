@@ -38,7 +38,7 @@
 | 庞雷 | 成都维塔士软件 | speedcrusade0983@163.com |   
 | 邓景恒 | 深圳明源云科技 | 1609523342@qq.com |   
 | 邓宗旭 | 上海泰琰信息 | dengzongxu@vip.qq.com |  
-| 胡嘉乐 | 独立开发者 | hujiale-mail@qq.com |  
+| 胡嘉乐 | 武汉农村商业银行 | hujiale-mail@qq.com |  
 | 霍昱林 | 独立开发者 | 345479435@qq.com |  
 | 何璇 | 独立开发者 | 1018826963@qq.com |  
 
