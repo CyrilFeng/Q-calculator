@@ -37,7 +37,7 @@
 | 庞雷 | 成都维塔士软件 | speedcrusade0983@163.com |   
 | 邓景恒 | 深圳明源云科技 | 1609523342@qq.com |   
 | 邓宗旭 | 上海泰琰信息 | dengzongxu@vip.qq.com |  
-| 胡嘉乐 | 独立开发者 | hujiale-mail@qq.com |  
+| 胡嘉乐 | 武汉农村商业银行 | hujiale-mail@qq.com |  
 | 霍昱林 | 独立开发者 | 345479435@qq.com |  
 | 何璇 | 独立开发者 | 1018826963@qq.com |  
 
@@ -93,7 +93,7 @@ static{
 private final Map<Integer, CalcState<T>> cache = Maps.newHashMap();
 ```
 可能你已经注意到，`cache`的键是`Integer`类型的，的确，通常`String`会更常用，然而在万次计算的场景下，`String`的拼接已经成了瓶颈。
-为了实现高性能的键，`Permutation`通过位移对`Byte`数组的前3为进行扰动，确保键的唯一性和性能。
+为了实现高性能的键，`Permutation`通过位移对`Byte`数组的前3位进行扰动，确保键的唯一性和性能。
 
 ```Java
 private static Integer calcKey(List<Byte> a){
