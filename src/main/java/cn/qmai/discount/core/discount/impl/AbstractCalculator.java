@@ -51,7 +51,7 @@ public abstract class AbstractCalculator<T extends GoodsItem> implements Calcula
      * @param context 上下文
      * @param discountWrapper 优惠信息
      * @param records 记录享受过优惠的单品，key是calculateId，这里只提供容器，添加和判断规则由使用者自行决定
-     * @param prevStagePrice 上一步计算的订单的价格
+     * @param prevStagePrice 上一步计算出的订单的价格
      * @param curStage 当前stage
      * @return
      */
