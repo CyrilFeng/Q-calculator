@@ -36,7 +36,7 @@ public class Item implements Serializable {
     private String type;
 
     /**
-     * 优惠的ID，和DiscountWrapper中的id保持一致
+     * 优惠的ID，和DiscountWrapper中的id保持一致 
      */
     private String id;
 }
