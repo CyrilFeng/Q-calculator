@@ -18,6 +18,7 @@ package cn.qmai.discount.core.enums;
 
 /**
  * 组内关系枚举
+ * 组内关系枚举    
  * @author: CyrilFeng
  * @date: 2022/8
  */
