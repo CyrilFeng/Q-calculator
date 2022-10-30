@@ -28,7 +28,7 @@ import java.util.Map;
 public interface Calculator<T extends GoodsItem> {
 
    /**
-    * 优惠计算引擎的内部方法
+    * 优惠计算引擎的内部方法 
     * @param context  上下文
     * @param discountWrapper 当前优惠信息
     * @param records  参与优惠的商品记录，用于过滤
