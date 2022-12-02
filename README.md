@@ -55,10 +55,12 @@
 优惠的计算顺序可以分为平行式和渐进式，其中平行式优惠之间没有依赖关系，而渐进式优惠之间则存在依赖关系，即下一个优惠取决于上一步的优惠结果，假设小明消费了100元，有一个8折优惠券和一个满100-20的优惠券，则这2个优惠的使用顺序有以下两种情况：
 
 
-<img src="./READMEIMG/rela1.png" width="70%">
+<img src="./READMEIMG/rela1.png" width="60%">
 
 
 `Q-calculator`采用很多新颖的算法实现了高性能求解优惠最优排列。
+
+<img src="./READMEIMG/vv.png" width="90%">
 
 #### 核心计算类 Permutation&lt;T extends GoodsItem&gt;
 
