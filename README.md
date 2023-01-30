@@ -17,8 +17,6 @@
 
 [CyrilFeng](https://github.com/CyrilFeng)
 
-[longlian87](https://github.com/longlian87)
-
 #### 用户列表（部分）: 
  
   <img width="800" src="./READMEIMG/userlist.png" />
