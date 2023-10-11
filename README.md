@@ -16,8 +16,6 @@
 #### RT: 
  <img width="1000" src="./READMEIMG/211690962797_.pic.jpg" />
 
-#### maintainer: 
- 龙链
 
 #### 用户列表（部分）: 
  
