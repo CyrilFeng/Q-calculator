@@ -48,10 +48,6 @@ public class DiscountContext<T extends GoodsItem> implements Serializable {
      */
     private CalcResult calcResult;
 
-    /**
-     * 计算耗时
-     */
-    private long cost;
 
     /**
      * 当前订单参与计算的商品
@@ -121,23 +117,19 @@ public class DiscountContext<T extends GoodsItem> implements Serializable {
             //不限制
             list=list.stream().sorted().collect(Collectors.toList());
             c.discountItemGroup.put(discount.getId(),list);
-            runPreCompute(c,discount,list);
         }else if(1==conf.getGoodsType()){
             if(0==conf.getItemIdType()){
                 list = list.stream().filter(x->conf.getItemIds().
                         contains(x.getGoodsId())).sorted().collect(Collectors.toList());
                 c.discountItemGroup.put(discount.getId(), list);
-                runPreCompute(c,discount,list);
             } else if (1==conf.getItemIdType()) {
                 list = list.stream().filter(x->conf.getItemIds().
                         contains(x.getSkuId())).sorted().collect(Collectors.toList());
                 c.discountItemGroup.put(discount.getId(),list);
-                runPreCompute(c,discount,list);
             } else{
                 list = list.stream().filter(x-> CollectionUtils.intersection(
                         conf.getItemIds(), x.getCategoryIds()).size()>0).sorted().collect(Collectors.toList());
                 c.discountItemGroup.put(discount.getId(), list);
-                runPreCompute(c,discount,list);
             }
         }else{
             //指定不参与
@@ -145,19 +137,17 @@ public class DiscountContext<T extends GoodsItem> implements Serializable {
                 list=list.stream().filter(x->!conf.getItemIds().
                         contains(x.getGoodsId())).sorted().collect(Collectors.toList());
                 c.discountItemGroup.put(discount.getId(), list);
-                runPreCompute(c,discount,list);
             } else if (1==conf.getItemIdType()) {
                 list = list.stream().filter(x->!conf.getItemIds().
                         contains(x.getSkuId())).sorted().collect(Collectors.toList());
                 c.discountItemGroup.put(discount.getId(), list);
-                runPreCompute(c,discount,list);
             } else{
                 list=list.stream().filter(x-> CollectionUtils.intersection(
                         conf.getItemIds(), x.getCategoryIds()).size()==0).sorted().collect(Collectors.toList());
                 c.discountItemGroup.put(discount.getId(), list);
-                runPreCompute(c,discount,list);
             }
         }
+        runPreCompute(c,discount,list);
     }
 
     /**
