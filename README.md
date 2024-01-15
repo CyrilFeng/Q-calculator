@@ -1,5 +1,5 @@
 <div align=center>
-  <img width="340" src="./READMEIMG/qo.png" />
+  <img width="340" src="./READMEIMG/q2.png" />
 </div>
 
 <div align="center">
