@@ -290,7 +290,7 @@ public static List<Pair<Set<DiscountWrapper>,Set<DiscountWrapper>>> transform(Li
 
 #### CASE
 
-看了这么多概念，我们可以在`cn.qmai.discount.demo`找到调用的具体case
+看了这么多概念，我们可以在`com.github.qcalculator.discount.demo`找到调用的具体case
 
 ```Java
 @Controller
