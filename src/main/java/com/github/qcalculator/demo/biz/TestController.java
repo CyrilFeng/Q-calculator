@@ -1,7 +1,6 @@
 package com.github.qcalculator.demo.biz;
 
 import com.github.qcalculator.core.enums.GroupRelation;
-import cn.qmai.discount.core.model.common.*;
 import com.github.qcalculator.core.model.common.*;
 import com.github.qcalculator.core.model.goods.GoodsInfo;
 import com.github.qcalculator.core.model.goods.GoodsItem;

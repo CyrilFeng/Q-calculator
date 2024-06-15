@@ -16,7 +16,6 @@
 
 package com.github.qcalculator.core.discount.impl;
 import com.github.qcalculator.core.discount.Calculator;
-import cn.qmai.discount.core.model.common.*;
 import com.github.qcalculator.core.model.common.CalcStage;
 import com.github.qcalculator.core.model.common.DiscountContext;
 import com.github.qcalculator.core.model.common.DiscountWrapper;

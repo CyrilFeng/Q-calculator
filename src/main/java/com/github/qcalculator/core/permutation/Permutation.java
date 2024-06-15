@@ -18,7 +18,6 @@ package com.github.qcalculator.core.permutation;
 
 import com.github.qcalculator.core.aware.CalculatorRouter;
 import com.github.qcalculator.core.discount.Calculator;
-import cn.qmai.discount.core.model.common.*;
 import com.github.qcalculator.core.model.common.*;
 import com.github.qcalculator.core.model.goods.GoodsItem;
 import com.google.common.collect.Collections2;
