@@ -116,37 +116,31 @@ public class DiscountContext<T extends GoodsItem> implements Serializable {
         if(0==conf.getGoodsType()){
             //不限制
             list=list.stream().sorted().collect(Collectors.toList());
-            c.discountItemGroup.put(discount.getId(),list);
         }else if(1==conf.getGoodsType()){
             if(0==conf.getItemIdType()){
                 list = list.stream().filter(x->conf.getItemIds().
                         contains(x.getGoodsId())).sorted().collect(Collectors.toList());
-                c.discountItemGroup.put(discount.getId(), list);
             } else if (1==conf.getItemIdType()) {
                 list = list.stream().filter(x->conf.getItemIds().
                         contains(x.getSkuId())).sorted().collect(Collectors.toList());
-                c.discountItemGroup.put(discount.getId(),list);
             } else{
                 list = list.stream().filter(x-> CollectionUtils.intersection(
                         conf.getItemIds(), x.getCategoryIds()).size()>0).sorted().collect(Collectors.toList());
-                c.discountItemGroup.put(discount.getId(), list);
             }
         }else{
             //指定不参与
             if(0==conf.getItemIdType()){
                 list=list.stream().filter(x->!conf.getItemIds().
                         contains(x.getGoodsId())).sorted().collect(Collectors.toList());
-                c.discountItemGroup.put(discount.getId(), list);
             } else if (1==conf.getItemIdType()) {
                 list = list.stream().filter(x->!conf.getItemIds().
                         contains(x.getSkuId())).sorted().collect(Collectors.toList());
-                c.discountItemGroup.put(discount.getId(), list);
             } else{
                 list=list.stream().filter(x-> CollectionUtils.intersection(
                         conf.getItemIds(), x.getCategoryIds()).size()==0).sorted().collect(Collectors.toList());
-                c.discountItemGroup.put(discount.getId(), list);
             }
         }
+        c.discountItemGroup.put(discount.getId(), list);
         runPreCompute(c,discount,list);
     }
 
