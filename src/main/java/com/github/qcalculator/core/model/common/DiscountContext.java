@@ -15,6 +15,8 @@
  */
 
 package com.github.qcalculator.core.model.common;
+import com.github.qcalculator.core.enums.GoodsType;
+import com.github.qcalculator.core.enums.ItemIdType;
 import com.github.qcalculator.core.model.goods.GoodsItem;
 import com.github.qcalculator.core.precompute.PreCompute;
 import com.github.qcalculator.core.precompute.PreComputeHolder;
@@ -113,14 +115,14 @@ public class DiscountContext<T extends GoodsItem> implements Serializable {
     private static <T extends GoodsItem> void initDiscount(DiscountContext<T> c,DiscountWrapper discount){
         DiscountConfig conf =  discount.getDiscountConfig();
         List<T> list = Lists.newArrayList(c.goodsItems);
-        if(0==conf.getGoodsType()){
+        if(GoodsType.ALL.getCode() ==conf.getGoodsType()){
             //不限制
             list=list.stream().sorted().collect(Collectors.toList());
-        }else if(1==conf.getGoodsType()){
-            if(0==conf.getItemIdType()){
+        }else if(GoodsType.SELECT.getCode()==conf.getGoodsType()){
+            if(ItemIdType.ITEM.getCode() ==conf.getItemIdType()){
                 list = list.stream().filter(x->conf.getItemIds().
                         contains(x.getGoodsId())).sorted().collect(Collectors.toList());
-            } else if (1==conf.getItemIdType()) {
+            } else if (ItemIdType.SKU.getCode()==conf.getItemIdType()) {
                 list = list.stream().filter(x->conf.getItemIds().
                         contains(x.getSkuId())).sorted().collect(Collectors.toList());
             } else{
@@ -129,10 +131,10 @@ public class DiscountContext<T extends GoodsItem> implements Serializable {
             }
         }else{
             //指定不参与
-            if(0==conf.getItemIdType()){
+            if(ItemIdType.ITEM.getCode()==conf.getItemIdType()){
                 list=list.stream().filter(x->!conf.getItemIds().
                         contains(x.getGoodsId())).sorted().collect(Collectors.toList());
-            } else if (1==conf.getItemIdType()) {
+            } else if (ItemIdType.SKU.getCode()==conf.getItemIdType()) {
                 list = list.stream().filter(x->!conf.getItemIds().
                         contains(x.getSkuId())).sorted().collect(Collectors.toList());
             } else{
