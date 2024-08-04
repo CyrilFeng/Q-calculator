@@ -192,7 +192,7 @@ public abstract class Permutation<T extends GoodsItem> {
 
     private void cacheSnapshot(List<Byte> a,int i,Integer k){
         if(enableOptimize(a)&&i==2&&!cache.containsKey(k)){
-            cache.put(k,makeSnapshot(context.getGoodsItems()));
+            cache.put(k,makeSnapshot());
         }
     }
 
@@ -302,9 +302,8 @@ public abstract class Permutation<T extends GoodsItem> {
 
     /**
      * 构建保存点
-     * @param goods 商品列表
      */
-    private CalcState<T> makeSnapshot(List<T> goods){
+    private CalcState<T> makeSnapshot(){
         CalcState<T> state = new CalcState<>();
         state.setCurPrice(context.getCalcResult().getCurPrice());
         state.setCurStages(copyStage(context.getCalcResult().getCurStages()));
