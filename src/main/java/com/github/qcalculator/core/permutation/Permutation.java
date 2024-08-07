@@ -86,27 +86,6 @@ public abstract class Permutation<T extends GoodsItem> {
         }
     }
 
-    /**
-     * 计算用户选择的优惠组合是否有可行解
-     * @param context 上下文
-     * @return
-     */
-    public boolean findSolution(DiscountContext<T> context){
-        int size=context.getDiscountWrappers().size();
-        this.context=context;
-        if(size==0){
-            return false;
-        }
-        Collection<List<Byte>> list = PERMUTATIONS.get(size);
-        for(List<Byte> a:list){
-            if(findSolution(context,a)){
-                return true;
-            }
-        }
-        cache.clear();
-        mustUseSet.clear();
-        return false;
-    }
 
     /**
      * 计算最优解
@@ -156,40 +135,6 @@ public abstract class Permutation<T extends GoodsItem> {
         System.arraycopy(result.getCurStages(),0,result.getStages(),0,result.getStages().length);
     }
 
-    /**
-     * 找到可行解，这种情况list中所有优惠必须被使用
-     * @param context 上下文
-     * @param a 当前计算的排列
-     */
-    private boolean findSolution(DiscountContext<T> context,List<Byte> a){
-        Integer k = calcKey(a);
-        boolean canOptimize = enableOptimize(a)&&cache.containsKey(k);
-        initInner(canOptimize,k);
-        for(int i=canOptimize?3:0;i<a.size();i++){
-            DiscountWrapper wrapper = context.getDiscountWrappers().get(a.get(i));
-            Calculator<T> calculator = (Calculator<T>)calculatorRouter.getService(wrapper.getType());
-            //路由目标的计算器实现
-            if(canOptimize&&checkIfWakeUpJump(context.getDiscountWrappers().get(a.get(2)),wrapper)){
-                //还原保存点后，比较保存点的最后一个优惠节点和当前优惠的优先级，如不符合则跳出
-                break;
-            }
-            if (Objects.nonNull(calculator)) {
-                //执行计算器
-                if(!calcInner(calculator,wrapper,a,i)){
-                    return false;
-                }
-                CalcStage cs = context.getCalcResult().getCurStages()[i];
-                if(Objects.isNull(cs)){
-                    //执行当前排列，若存在未使用的优惠则证明当前排列不可行
-                    return false;
-                }
-                //优惠长度为5、6、7 将开启优化，只缓存走到第3个节点的部分
-                cacheSnapshot(a,i,k);
-            }
-        }
-        return true;
-    }
-
     private void cacheSnapshot(List<Byte> a,int i,Integer k){
         if(enableOptimize(a)&&i==2&&!cache.containsKey(k)){
             cache.put(k,makeSnapshot());
@@ -207,7 +152,7 @@ public abstract class Permutation<T extends GoodsItem> {
     }
 
     private boolean calcInner(Calculator<T> calculator,DiscountWrapper wrapper,List<Byte> a,int i){
-        long price = calculator.calcWarp(context, wrapper, context.getRecords(), a.get(i), i);
+        long price = calculator.calcWrap(context, wrapper, context.getRecords(), a.get(i), i);
         if (price < 0) {
             return false;
         }

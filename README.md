@@ -166,13 +166,13 @@ public class PreComputeHolder {
 
 #### 计算器 Calculator
 
-`Calculator`是单个优惠的计算接口，它有`calcWarp`一个方法，负责具体的优惠计算，但`calcWarp`需要承担一些内部的事情，因此我们提供了抽象类`AbstractCalculator`实现了`calcWarp`，并最终暴露了一个更简单的`calc`方法给使用者。
+`Calculator`是单个优惠的计算接口，它有`calcWrap`一个方法，负责具体的优惠计算，但`calcWarp`需要承担一些内部的事情，因此我们提供了抽象类`AbstractCalculator`实现了`calcWrap`，并最终暴露了一个更简单的`calc`方法给使用者。
 
-`AbstractCalculator`的内容如下，`calcWarp`方法负责创建`CalcStage`，维护`CalcStage`数组等内部工作，这对使用者来说是透明的，使用者实现`calc`就好。
+`AbstractCalculator`的内容如下，`calcWrap`方法负责创建`CalcStage`，维护`CalcStage`数组等内部工作，这对使用者来说是透明的，使用者实现`calc`就好。
 
 ```Java
 public abstract class AbstractCalculator<T extends GoodsItem> implements Calculator<T> {
-    public long calcWarp(DiscountContext<T> context, DiscountWrapper discountWrapper, Map<Long, T> records, byte idx, int i) {
+    public long calcWrap(DiscountContext<T> context, DiscountWrapper discountWrapper, Map<Long, T> records, byte idx, int i) {
         CalcStage stage = new CalcStage();
         CalcResult cr = context.getCalcResult();
         long price= cr.getCurPrice();

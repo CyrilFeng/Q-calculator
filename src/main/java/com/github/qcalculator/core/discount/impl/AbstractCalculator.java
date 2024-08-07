@@ -31,7 +31,7 @@ import java.util.Map;
  */
 public abstract class AbstractCalculator<T extends GoodsItem> implements Calculator<T> {
 
-    public  long calcWarp(DiscountContext<T> context, DiscountWrapper discountWrapper, Map<Long, T> records, byte idx, int i) {
+    public  long calcWrap(DiscountContext<T> context, DiscountWrapper discountWrapper, Map<Long, T> records, byte idx, int i) {
         CalcStage stage = new CalcStage();
         CalcResult cr = context.getCalcResult();
         long price= cr.getCurPrice();

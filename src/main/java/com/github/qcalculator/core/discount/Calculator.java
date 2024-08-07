@@ -36,5 +36,5 @@ public interface Calculator<T extends GoodsItem> {
     * @param idx  活动的index
     * @param i  当前计算的索引下标，它和idx的区别在于比如有数组[9,4,6,5],则i为数组下标 i=1 时对应的idx是4
     */
-    long calcWarp(DiscountContext<T> context, DiscountWrapper discountWrapper, Map<Long, T> records, byte idx, int i);
+    long calcWrap(DiscountContext<T> context, DiscountWrapper discountWrapper, Map<Long, T> records, byte idx, int i);
 }
