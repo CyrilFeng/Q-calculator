@@ -30,8 +30,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * ID生成器，用于生成每次计算的商品id
- * 非线程安全，不可以在多线程共享。 每次计算创建一个，用于生成具体每一个商品的唯一ID
  * @author: shiyafeng
  * @date: 2022/7
  */
@@ -134,7 +132,7 @@ public class DiscountGroupUtil {
         for(Map.Entry<String,Long> e:map.entrySet()){
             Integer idx = idxMap.get(e.getKey());
             if(Objects.nonNull(idx)&&e.getValue()>1){
-                orderedList.add(idxMap.get(e.getKey()));
+                orderedList.add(idx);
             }
         }
         orderedList.sort(Collections.reverseOrder());
