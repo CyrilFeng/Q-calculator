@@ -29,10 +29,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * @author: shiyafeng
- * @date: 2022/7
- */
+
 public class DiscountGroupUtil {
 
     private static final String EXCLUDE="exclude";
